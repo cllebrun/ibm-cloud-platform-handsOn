@@ -44,7 +44,7 @@ In the following lab, you will learn:
 
 12. If it’s the first time you use the continuous delivery toolchain, it ask to create the toolchain. Make sure to be localized in the US-south region and click "Create".
 13. Access the online editor "Eclipse Orion Web IDE":
-<img src="./images/orion.png" width="40%"/>
+<img src="./images/orion.png" width="20%"/>
 
 
 
