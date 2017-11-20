@@ -46,6 +46,10 @@ In the following lab, you will learn:
 13. Access the online editor "Eclipse Orion Web IDE":
 <img src="./images/orion.png" width="20%"/>
 
-
+14. You can now edit your source code. Open the index.html file in the public forlder
+15. Change something in the text, for instances replace "Hello World" by "Hello <yourname>"
+16. Save your app (ctrl+s or file->save)
+17. Deploy:
+<img src="./images/deploy.png" width="20%"/>
 
 
