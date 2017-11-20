@@ -23,21 +23,21 @@ In the following lab, you will learn:
 
 # First Steps
 
-1. Login to the IBM Cloud Platform: https://console.bluemix.net
-1. Make sure to be loacated in the US-South region:
++ Login to the IBM Cloud Platform: https://console.bluemix.net
++ Make sure to be loacated in the US-South region:
 <img src="./images/regionUS.png" width="20%"/>
-1. Select the Catalog tab (up and right).
-1. Scroll down to the Cloud Foundry Apps section.
-1. Select the "SDK for Node.js" runtime:
++ Select the Catalog tab (up and right).
++ Scroll down to the Cloud Foundry Apps section.
++ Select the "SDK for Node.js" runtime:
 <img src="./images/SDKNodejs.png" width="20%"/>
-1. Give it a unique name.
-1. Click "Create".
-1. Wait for your application to start.
-1. You have created an Hello Worls basic web app.
-1. Click on "Visit App URL" to visualize your app.
++ Give it a unique name.
++ Click "Create".
++ Wait for your application to start.
++ You have created an Hello Worls basic web app.
++ Click on "Visit App URL" to visualize your app.
 
 # Add the development tools to your app
-1. Back on the platform tab, on the Overview tab of your app, enable the “Continious Delivery“ option (back and left):
++ Back on the platform tab, on the Overview tab of your app, enable the “Continious Delivery“ option (back and left):
 <img src="./images/continuous.png" width="20%"/>
 
 
