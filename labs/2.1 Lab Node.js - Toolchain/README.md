@@ -42,4 +42,10 @@ In the following lab, you will learn:
 11. Back on the platform tab, on the Overview tab of your app, enable the “Continious Delivery“ option (back and left):
 <img src="./images/continuous.png" width="20%"/>
 
+12. If it’s the first time you use the continuous delivery toolchain, it ask to create the toolchain. Make sure to be localized in the US-south region and click "Create".
+13. Access the online editor "Eclipse Orion Web IDE":
+<img src="./images/orion.png" width="40%"/>
+
+
+
 
