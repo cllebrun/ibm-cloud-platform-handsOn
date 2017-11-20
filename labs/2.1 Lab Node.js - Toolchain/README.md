@@ -26,10 +26,12 @@ In the following lab, you will learn:
 + Login to the IBM Cloud Platform: https://console.bluemix.net
 + Make sure to be loacated in the US-South region:
 <img src="./images/regionUS.png" width="20%"/>
+
 + Select the Catalog tab (up and right).
 + Scroll down to the Cloud Foundry Apps section.
 + Select the "SDK for Node.js" runtime:
 <img src="./images/SDKNodejs.png" width="20%"/>
+
 + Give it a unique name.
 + Click "Create".
 + Wait for your application to start.
