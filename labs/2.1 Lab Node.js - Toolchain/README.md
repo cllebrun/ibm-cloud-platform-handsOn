@@ -23,4 +23,6 @@ In the following lab, you will learn:
 
 # Steps
 
-https://ibm.box.com/s/mv25x2m98xbxytpnhqb96inl69u2zjru
+1. Login to the IBM Cloud Platform: https://console.bluemix.net
+2. Make sure to be loacated in the US-South region:
+<img src="./images/regionUS.png" width="20%"/>
