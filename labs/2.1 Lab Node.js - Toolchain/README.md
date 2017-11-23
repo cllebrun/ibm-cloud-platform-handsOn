@@ -47,21 +47,22 @@ In the following lab, you will learn:
 13. Access the online editor "Eclipse Orion Web IDE":
 <img src="./images/orion.png" width="20%"/>
 
-# Part1: simple update
+# Part 1: simple update
 
 14. You can now edit your source code. Open the index.html file in the public forlder
 15. Change something in the text, for instances replace "Hello World" by "Hello <yourname>"
 16. Save your app (ctrl+s or file->save)
 17. Deploy:
-<img src="./images/deploy.png" width="20%"/>
+<img src="./images/deploy.png" width="30%"/>
 
 18: Confirm if a popup shows up
 19: When your app is started (green circle next to your app name), you can launch it to visualize the result:
-<img src="./images/launchapp.png" width="20%"/>
+<img src="./images/launchapp.png" width="30%"/>
 
-# Part2: complex update
+# Part 2: complex update
 
 In this part, you will use the Git tool to comit and push your updates. You will add a countdown to your application.
+
 20: You need first to import two libraries to your code. A .css file for your clock's look and fill and a .js file for the javascript logic.
 Select the "public" folder in your source code repository, click right and chose Import -> HTTP.
 Import the two libraries, using these URL:
@@ -72,7 +73,7 @@ Import the two libraries, using these URL:
   https://raw.githubusercontent.com/cllebrun/Flipclock/master/flipclock.js
   
   ```
-<img src="./images/importlib.png" width="20%"/>
+<img src="./images/importlib.png" width="30%"/>
 
 
 
