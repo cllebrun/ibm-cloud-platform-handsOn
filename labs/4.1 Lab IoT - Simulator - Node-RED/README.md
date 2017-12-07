@@ -104,13 +104,41 @@ The second one that can process temperature readings from the Watson IoT platfor
 # Connect with the Watson IoT Platform.
 
 The first flow simulate a device publishing an event. To vizualise the data in you Watson IoT platform organization you need to register the simulated device in your organization.
-1. Return to the Bluemix console, go to the IoT service -> launch and navigate into the devices list.
+1. Return to the IBM Cloud Platform console, click on the IoT service -> launch it
 
-1. Add a new device type "thermostat" and a new device "LivingRoomThermo1". Leave all the default creation options.
 
-1. Go back to Node-RED and activate the first flow to publish an event: you can see the event in the Watson IoT dashboard
+From the Internet of Things service dashboard, access your IoT organisation and add your device to it. 
 
-   ![Watson IoT dashboard](./images/watsoniot-event.png)
+1. Select the Devices tab on the left.
+2. Select the "Device Types" tab.
+<img src="./images/device-type.png" width="50%"/> 
+
+2. Add Device Type (up and right).
+3. Give it a name: "thermostat". Click "Next"
+4. Leave the other options by default and click "Done".
+5. Now you are going to register a device. Click "Register Devices"
+<img src="./images/register-device.png" width="40%"/> 
+
+6. Enter a device ID: "LivingRoomThermo1". Click Next, Next
+7. Chose an identification token (8 characters minimum)
+8. Click "Done"
+        
+5. You get your device credentials details, copy these when you get them as you will need them in the next steps. Authentication token is non-recoverable.
+
+        Organization ID
+        Device Type
+        Device ID
+        Authentication Method
+        Authentication Token
+
+
+1. Go back to Node-RED, open and modify the inject node to publish events continuously (repeat -> onterval -> every 3 seconds): 
+
+<img src="./images/repeat-inject.png" width="40%"/> 
+
+1. You can see events in the Watson IoT dashboard
+
+   ![Watson IoT dashboard](./images/events-iot.png)
 
 
 # Translate messages with Watson.
