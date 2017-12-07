@@ -28,7 +28,7 @@ From the Internet of Things service dashboard, access your IoT organisation and 
 
 1. Select the Devices tab on the left.
 2. Select the "Device Types" tab.
-<img src="./images/device-type.png" width="40%"/> 
+<img src="./images/device-type.png" width="50%"/> 
 
 2. Add Device Type (up and right).
 3. Give it a name (for example "ARM"). Click "Next"
