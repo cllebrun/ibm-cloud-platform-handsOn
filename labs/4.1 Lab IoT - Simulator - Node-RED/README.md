@@ -4,7 +4,6 @@
 
 This tutorial demonstrates how to connect a simulated device to the Watson IoT platform, vizualise its live data, store its data into a database and leverage [Node-RED](http://www.nodered.org) tool for wiring together hardware devices, APIs and online services.
 
-  ![Sample Architecture](./images/iot-architecture.png)
 
 
 # Objectives
@@ -123,14 +122,6 @@ From the Internet of Things service dashboard, access your IoT organisation and 
 7. Chose an identification token (8 characters minimum)
 8. Click "Done"
         
-5. You get your device credentials details, copy these when you get them as you will need them in the next steps. Authentication token is non-recoverable.
-
-        Organization ID
-        Device Type
-        Device ID
-        Authentication Method
-        Authentication Token
-
 
 1. Go back to Node-RED, open and modify the inject node to publish events continuously (repeat -> onterval -> every 3 seconds): 
 
