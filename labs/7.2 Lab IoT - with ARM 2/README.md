@@ -42,11 +42,11 @@ From the Internet of Things service dashboard, access your IoT organisation and 
         
 5. You get your device credentials details, copy these when you get them as you will need them in the next steps. Authentication token is non-recoverable.
 
-        *   Organization ID
-        *   Device Type
-        *   Device ID
-        *   Authentication Method
-        *   Authentication Token
+        Organization ID
+        Device Type
+        Device ID
+        Authentication Method
+        Authentication Token
 
 # 2. Adding registration credentials onto the device
 
