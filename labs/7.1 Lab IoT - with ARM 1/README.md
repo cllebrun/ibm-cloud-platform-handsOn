@@ -18,7 +18,6 @@ Material:
   - Accelerometer (MMA7660)
   - Potentiometer
   - Joystick
-* You already completed lab: https://github.com/cllebrun/bluemix-handsOn/tree/master/labs/4.1%20Lab%20IoT%20-%20Simulator%20-%20Node-RED
 
 
 # 1. Connect the ARM device
