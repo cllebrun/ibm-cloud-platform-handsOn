@@ -52,22 +52,31 @@ From the Internet of Things service dashboard, access your IoT organisation and 
 
 When you added your device to your Watson Internet of Things organization you were given device credentials. Your device will not send data to your organization until you add these credentials. You will add these using the mbed development environment.
 
-1. To get the registration credentials onto your device, navigate to the IBMWIoTPSecureClientSample code repository: https://os.mbed.com/teams/IBM_IoT/code/IBMWIoTPSecureClientSample/
-2. Click ‘Import this program’ on the right. It will import the program into the online compiler, you will need to sign in, or create an account.
-3. Expand the IBMWIoTPSecureClientSample project and open the main.cpp file. Add the configuration details you were given when adding the device to your Internet of Things service organization.
-4. The configuration details must be added using the following format:
+1. You will need first to create an account to use the mbed online compiler: https://os.mbed.com/account/login/?next=/teams/IBM_IoT/ and Login
+
+2. You can now import the source code to your mbed workspace. Navigate to the IBMWIoTPClientEthernetExample code repository: https://os.mbed.com/teams/IBM_IoT/code/IBMIoTClientEthernetExample/
+
+3. Click ‘Import this program’ on the right. It will import the program into the online compiler
+
+4. It will ask to chose a platform, chose "FRDM-K64F"
+
+<img src="./images/frdm.png" width="40%"/> 
+
+4. Expand the IBMWIoTPClientEthernetExample project and open the main.cpp file. Add the configuration details you were given when adding the device to your Internet of Things service organization.
+5. The configuration details must be added using the following format:
 ```
-    char *orgId = “OrganizationID”; <== Replace with correct OrgID
-    char *deviceType = “DeviceType”; <== Replace with correct DeviceType
-    char *deviceId = “DeviceID”; <== Replace with correct DeviceId
-    char *method = “token”;
-    char *token = “DeviceToken”; <== Replace with correct device token
+  // Configuration values needed to connect to IBM IoT Cloud
+  #define ORG "quickstart"             // For a registered connection, replace with "quickstart" your "org"
+  #define ID ""                        // For a registered connection, replace with your id
+  #define AUTH_TOKEN ""                // For a registered connection, replace with your auth-token
+  #define TYPE DEFAULT_TYPE_NAME        // For a registered connection, replace DEFAULT_TYPE_NAME with your "type"
+
 ```
 
 5. Save the above made changes to main.cpp in online compiler
 6. Before compiling, ensure that the correct device target (FRDM-K64F) has been selected on the right of the online compiler toolbar (it will be its own platform).
 7. Within the online compiler, click Compile and save the bin file to the mbed drive.
-8. Wait for the LED to stop flashing, then press the reset button on the device, which is located to the left of the LCD screen on the top of your microcontroller. This will run the download program.
+8. Wait for the LED to stop flashing, then when the LED is RED, press the reset button on the device, which is located to the left of the LCD screen on the top of your microcontroller. This will run the download program.
 9. The device will then run in registered mode.
 
 
@@ -96,75 +105,40 @@ Using your Node-RED work flow editor (accessed from your application URL), updat
 # 4. Sending commands from your application
 
 When an mbed device is running in registered mode you can send it commands from an Watson Internet of Things application. For example, the sample code that you have loadedinto the device spports a simple command that will make the device’s onboard LED blink at a specified rate.
+(Look at the "messageArrived" function i your .cpp file for more details)
 
 1. You can try this out by writing an application which connects to the Watson Internet of Things and publishes a message to the device.
-2. Go to the Node-RED instance and the flow that was used earlier in the recipe. Navigate to the menu at the top right of the screen and select Import from Clipboard. Copy the JSON string from the text area below and paste it into the dialog box in Node-RED and select OK. If there any issues, copy the contents from github: https://raw.githubusercontent.com/ibm-messaging/iot-device-samples/master/mbed/ARM-mbed-Blink-LED.json
+
+2. Go to the Node-RED instance and the flow that was used earlier in the recipe. 
+3. Drag and drop a "function" node. Open it, name it "blink rate" and write the following code in the function:
+
 ```
-[
- {
- "id": "6fc0879c.903f78",
- "type": "ibmiot out",
- "authentication": "boundService",
- "apiKey": "",
- "outputType": "cmd",
- "deviceId": "160490130025",
- "deviceType": "iotsample-mbed-k64f",
- "eventCommandType": "blink",
- "format": "json",
- "data": "4",
- "name": "IBM IoT App Out",
- "service": "registered",
- "x": 847,
- "y": 518,
- "z": "cb4121a0.34bee",
- "wires": [] },
- {
- "id": "bdf085cb.420f78",
- "type": "function",
- "name": "blink rate",
- "func": "rate = Math.round(msg.payload * 5);nmsg.payload = "{ "rate": "+rate+ " }";nreturn msg;",
- "outputs": 1,
- "x": 587,
- "y": 477,
- "z": "cb4121a0.34bee",
- "wires": [
- [
- "6fc0879c.903f78",
- "5bde5cc2.a421a4"
- ] ] },
- {
- "id": "5bde5cc2.a421a4",
- "type": "debug",
- "name": "Show Blink Rate",
- "active": true,
- "console": "false",
- "complete": "payload",
- "x": 838,
- "y": 414,
- "z": "cb4121a0.34bee",
- "wires": [] },
- {
- "id": "1dc589ed.e23a76",
- "type": "comment",
- "name": "Control LED blink rate using Potentiometer1",
- "info": "The subflow converts the reading from potentiometer1 to an LED blink rate between 0 and 5.nn0 turns the LED offnnA value between 1 and 5 is the rate per second that the LED on the K64F will blink at.nnFinally the IoT Output node sends the blink command to the device. ",
- "x": 682,
- "y": 374,
- "z": "cb4121a0.34bee",
- "wires": [] }
-] 
+rate = Math.round(msg.payload * 5);
+msg.payload = "{ \"rate\": "+rate+ " }";
+return msg;
+
 ```
-3. Wire the output of the function node that extracts the value of Pot1 to the input of the node labelled ‘blink rate’.
+
+4. Add a debug node and an ibmiot output node after your Function node. Configure the IBM IoT App Out node:
+
+```
+  - Authentication: Bluemix Service
+  - Output Type: Device Command
+  - Device Type: "your device type"
+  - Device ID: "your device id"
+  - Command Type: blink
+  - Format: json
+  - Data: blink commands
+  - Name: IBM IoT App Out
+
+```
+
+5. Wire the output of the function node that extracts the value of Pot1 to the input of the node labelled ‘blink rate’.
 <img src="./images/node2.png" width="50%"/> 
 
-4. Open the IBM IoT Out node and edit the configuration to include the following details:
-        - Authentication: Bluemix Service
-        - Output Type: Device Command
-        - Device Type: same as the IBM IoT App In node
-        - Device ID: The MAC address as earlier (lower caes with colons removed)
-        - Command Type: Blink
-        - Data: 1
-5. Select OK and Deploy.
-6. Now twist potentiometer 1 (positioned to the left of the device if the ethernet cable is at the top of the device) to cause the blue LED on the main board (not the application shield with the sensors) to flash at a rate between 1 and 5 times per second, or turn it off.
+6. Select OK and Deploy.
+7. Now twist potentiometer 1 (positioned to the left of the device if the ethernet cable is at the top of the device) to cause the blue LED on the main board (not the application shield with the sensors) to flash at a rate between 1 and 5 times per second, or turn it off.
 
 Note: Sending a rate of 0 will cause the LED to stop blinking.
+
+If you have any issue, copy the contents from github: https://raw.githubusercontent.com/ibm-messaging/iot-device-samples/master/mbed/ARM-mbed-Blink-LED.json
