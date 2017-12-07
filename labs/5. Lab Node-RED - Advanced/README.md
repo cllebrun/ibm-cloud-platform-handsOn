@@ -78,3 +78,5 @@ You can create web pages and nice visualization with node-red.
 2. Copy paste this D3 display flow to your node-red: https://flows.nodered.org/flow/4c01e78d4d97a498e2fea857d3a2ebc4
 3. Configure the Twitter node with your account, chose a #, and analyse "all public teets". Configure the Cloudant DB, give a name to the db.
 4. Browse <yourappurl>/twittersentiments
+
+5. You can browse other libraries at: https://flows.nodered.org/
