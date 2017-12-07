@@ -12,7 +12,7 @@ This tutorial demonstrates how to register your device into a private IBM Watson
 
 # Pre-Requisites
 Material:
-*   Complete lab 1 on ARM: https://github.com/cllebrun/bluemix-handsOn/tree/master/labs/7.1%20Lab%20IoT%20-%20with%20ARM%201
+*   Complete lab 1 on ARM: https://github.com/cllebrun/ibm-cloud-platform-handsOn/tree/master/labs/7.1%20Lab%20IoT%20-%20with%20ARM%201
 
 The Watson IoT Platform within your application creates a private Internet of Things Platform organization, where you can register your device(s).
 
