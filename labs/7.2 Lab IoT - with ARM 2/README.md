@@ -18,20 +18,29 @@ The Watson IoT Platform within your application creates a private Internet of Th
 
 *   Open the IBM Cloud Platform Dashboard.
 On the Overview tab, you should see the Watson IoT Platform listed under the Connections. 
-<img src="./images/iot-service-connexion.png" width="20%"/> 
+<img src="./images/iot-service-connexion.png" width="40%"/> 
 
 *   Click on the WIoTP service and click on Launch button to launch the WIoTP Dashboard.
 
 # 1. Adding your device to your Watson Internet of Things Organization
 
-From the Internet of Things service dashboard, access your IoT organisation and add your device to it. You might want take a look at the recipe How to Register Devices in IBM Watson IoT Platform, that explains in detail on how to add a Device Type and Device ID, within the Watson IoT Platform.
+From the Internet of Things service dashboard, access your IoT organisation and add your device to it. 
 
-1. Select the Devices tab.
-2. Select Add Device.
-3. Enter a device type.
-4. Enter a device ID.
-        The device ID can be found by scrolling down on the LCD screen using the joystick button on a connected board. Alternatively, the device ID can be derived from your boards MAC address. Copy this from the Quickstart visualization page. Then remove all colons and make sure all letters are lowercase (ex. 01:23:45:67:89:AB becomes 0123456789ab)
-5. During the next step of the device registration process you will get file configuration information containing the following details, copy these when you get them as you will need them in the next steps.
+1. Select the Devices tab on the left.
+2. Select the "Device Types" tab.
+<img src="./images/device-type.png" width="40%"/> 
+
+2. Add Device Type (up and right).
+3. Give it a name (for example "ARM"). Click "Next"
+4. Leave the other options by default and click "Done".
+5. Now you are going to register a device. Click "Register Devices"
+<img src="./images/register-device.png" width="40%"/> 
+
+6. Enter a device ID. Click Next, Next
+7. Chose an identification token (8 characters minimum)
+8. Click "Done"
+        
+5. You get your device credentials details, copy these when you get them as you will need them in the next steps. Authentication token is non-recoverable.
         Organization ID
         Device Type
         Device ID
