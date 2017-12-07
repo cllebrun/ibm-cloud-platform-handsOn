@@ -15,7 +15,7 @@ This tutorial demonstrates how to connect a simulated device to the Watson IoT p
 
 
 # Pre-Requisites
-* A [Bluemix](http://www.bluemix.net) account
+* A [IBM Cloud Platform](http://www.bluemix.net) account
 
 
 # Start the simulated device
@@ -45,9 +45,9 @@ This way, we don't require an actual hardware device to test our application.
 
 # Connect your device to the Watson IOT Platform
 
-You've seen your data, what next? Now you will see how to use theses sensors data in an application created with IBM Bluemix.
+You've seen your data, what next? Now you will see how to use theses sensors data in an application created with IBM Cloud Platform.
 
-1. Create an app using **Internet of Things Platform Starter** from the Boilerplates category in the Bluemix Catalog.
+1. Create an app using **Internet of Things Platform Starter** from the Boilerplates category in the IBM Cloud Platform Catalog.
 
     ![](./images/boilerplate-iotstarter.png)
 
@@ -95,7 +95,7 @@ The second one that can process temperature readings from the Watson IoT platfor
 
   ![Cloudant configuration](./images/nodered-cloudantconfig.png)
 
-1. Deploy the flow. Return to the Bluemix console, go to the Cloudant console and navigate into the records.
+1. Deploy the flow. Return to the IBM Cloud Platform console, go to the Cloudant console and navigate into the records.
 
   ![Cloudant console](./images/cloudant-console.png)
 
@@ -136,7 +136,7 @@ From the Internet of Things service dashboard, access your IoT organisation and 
 
 The warning messages generated in Node-RED uses English by default. You may want to translate those messages into your oww language.
 
-1. In Bluemix console, bind a new service **Language Translation** to your app.
+1. In the IBM Cloud Platform console, bind a new service **Language Translation** to your app.
 
 1. In Node-RED flow editor, add a new **Language Translation** node to the flow.
 
