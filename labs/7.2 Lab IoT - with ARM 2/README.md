@@ -16,10 +16,11 @@ Material:
 
 The Watson IoT Platform within your application creates a private Internet of Things Platform organization, where you can register your device(s).
 
-Open the IBM Cloud Platform Dashboard.
+*   Open the IBM Cloud Platform Dashboard.
 On the Overview tab, you should see the Watson IoT Platform listed under the Connections. 
 <img src="./images/iot-service-connexion.png" width="20%"/> 
-Click on the WIoTP service and click on Launch button to launch the WIoTP Dashboard.
+
+*   Click on the WIoTP service and click on Launch button to launch the WIoTP Dashboard.
 
 # 1. Adding your device to your Watson Internet of Things Organization
 
