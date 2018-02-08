@@ -1,9 +1,9 @@
 
 # Introduction
 
-In this lab, you’ll gain a high level understanding of the architecture, features, and development concepts related to the Cloud Foundry runtimes and IBM Cloud platform services. Throughout the lab, you’ll create a sample application and add a service.
+In this lab, you will learn how to deploy you first app in Node.js with the IBM Cloud platform. You will also understand how to develop locally, add an IBM service and push your modifications to the cloud platform. 
 
-<img src="./images/blmx+watson.png" width="20%"/>
+<img src="./images/blmx+watson.png" width="40%"/>
 
 
 # Objective
