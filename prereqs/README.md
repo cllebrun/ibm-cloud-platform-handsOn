@@ -2,38 +2,31 @@
 
 ## User Accounts
 
-+ You must create an account on IBM Bluemix.
++ You must create an account on the IBM Cloud Platform.
 
 + If you do not have an account yet, follow this link to register, using your IBM id: [https://bluemix.net/registration](https://bluemix.net/registration)
 
-+ You’ll be registered for a 30 days trial account.
++ You’ll be registered for a lite account with no time restrictions.
 
 
-## Cloud Foundry Command Line Interface (CF CLI)
+## IBM CLoud Command Line Interface 
 
-+ You will use the CloundFoundry cli to create, update and deploy your apps.
++ You will use the IBM Cloud commands to create, update and deploy your apps.
 
 + You can download an installer from here:
-  [https://github.com/cloudfoundry/cli/releases](https://github.com/cloudfoundry/cli/releases)
+  [https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started](https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started)
 
 + Select the latest version corresponding to your operating system.
 
 
-## Bluemix Command Line Interface (BluemixCLI)
+## IBM CLoud Command Line Interface - Plugins
 
-+ This will help you connect to your Bluemix account through the command line.
++ Depending on the labs, you may need to install CLI plugins (containers, cloud functions ..)
 
 + You can download it from here:
-  [http://clis.ng.bluemix.net](http://clis.ng.bluemix.net)
+  [https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins](https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins)
 
 + Select the version corresponding to your operating system.
-
-
-## Container docker
-
-+ Install docker for [Mac](https://docs.docker.com/engine/installation/mac/) or [Windows](https://docs.docker.com/engine/installation/windows/)
-
-+ Install the [Cloud Foundry Containers plug-in](https://new-console.ng.bluemix.net/docs/containers/container_cli_cfic.html)
 
 
 ## Node and Web Development
@@ -66,11 +59,6 @@ There are several modern, open source text editor that understands web design. S
 + JDK v1.8
   [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
-
-## Optional tools
-
-+ curl, command line tool and library for transferring data with URLs
-  [https://curl.haxx.se/](https://curl.haxx.se/)
   
 ## Proxy
 
@@ -86,7 +74,7 @@ There are several modern, open source text editor that understands web design. S
   
   To test if your proxy works, run the following command:
   
-  ```cf api https://api.ng.bluemix.net```
+  ```bx api https://api.ng.bluemix.net```
 
 ### Git Proxy
   
