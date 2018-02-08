@@ -3,7 +3,7 @@
 
 In this lab, you’ll gain a high level understanding of the architecture, features, and development concepts related to the Cloud Foundry runtimes and IBM Cloud platform services. Throughout the lab, you’ll create a sample application and add a service.
 
-![Todo](./images/blmx+watson.png)
+<img src="./images/blmx+watson.png" width="20%"/>
 
 
 # Objective
