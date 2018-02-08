@@ -1,6 +1,6 @@
 <img src="./images/bluemix-logo.png" width="20%"/>
 
-Discover the IBM Cloud Platform, through a set of hands-on labs.
+Discover the IBM Cloud Platform through a set of hands-on labs.
 
 # Table of Contents
 
@@ -18,12 +18,7 @@ Discover the IBM Cloud Platform, through a set of hands-on labs.
 
 + [4.1 Lab IoT - Simulator - Node-RED](./labs/4.1%20Lab%20IoT%20-%20Simulator%20-%20Node-RED)
 
-<!--++ [4.2 Lab IoT - Node-RED dashboard](./labs/4.2%20Lab%20IoT%20-%20Node-RED%20dashboard)-->
-
 + [4.2 Lab IoT - Dashboard Nodes](./labs/4.2%20Lab%20IoT%20-%20Dashboard%20Nodes)
-
-
-<!--+ [4.2 Lab IOT - web UI](./labs/4.2%20Lab%20IOT%20-%20web%20UI)-->
 
 + [5. Lab Node-RED - Advanced](./labs/5.%20Lab%20Node-RED%20-%20Advanced)
 
@@ -37,13 +32,6 @@ Discover the IBM Cloud Platform, through a set of hands-on labs.
 
 + [7.4 Lab Watson vr](./labs/7.4%20Lab%20Watson%20vr)
 
-<!--++ [6.2 Lab IoT - RaspberryPi - nodes exercises](./labs/6.2%20Lab%20IoT%20-%20RaspberryPi%20-%20nodes%20exercises)-->
-
-<!--+ [6. Lab Visual Recognition](./labs/6.%20Lab%20Visual%20Recognition)-->
-
-<!--+ [Lab API - Manage your APIs with API Connect](./labs/Lab%20API%20-%20Manage%20your%20APIs%20with%20API%20Connect)
-
-+ [Lab Container - Run native docker Container on the Cloud](./labs/Lab%20Container%20-%20Run%20native%20docker%20Container%20on%20the%20Cloud) -->
 
 # Pre-Requisites
 
