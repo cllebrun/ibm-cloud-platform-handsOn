@@ -1,4 +1,4 @@
-<img src="./images/bluemix-logo.png" width="20%"/>
+<img src="./images/cloud-color-logo.png" width="20%"/>
 
 Discover the IBM Cloud Platform through a set of hands-on labs.
 

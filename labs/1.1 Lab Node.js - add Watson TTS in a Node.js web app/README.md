@@ -1,7 +1,7 @@
 
 # Introduction
 
-In this lab, you will learn how to deploy you first app in Node.js with the IBM Cloud platform. You will also understand how to develop locally, add an IBM service and push your modifications to the cloud platform. 
+In this lab, you will learn how to create and deploy you first app in Node.js with the IBM Cloud platform. You will also understand how to work locally with Node.js, connect to an IBM Cloud service and push your modifications to the IBM Cloud platform. 
 
 <img src="./images/blmx+watson.png" width="40%"/>
 
@@ -10,18 +10,18 @@ In this lab, you will learn how to deploy you first app in Node.js with the IBM 
 
 In the following lab, you will learn:
 
-+ How to deploy a new Cloud Foundry app based on Node.js runtime
++ How to deploy a new Cloud Foundry app with the Node.js runtime
 + How to run a Node.js app locally
-+ How to create a new service  
-+ How to use the Cloud Foundry Command Line Interface
++ How to create and bind a new service 
++ How to use the IBM Cloud Command Line Interface
 
 
 # Pre-Requisites
 
 + Get an [IBM Cloud Platform account](https://console.bluemix.net/registration/), or use an existing account.
-+ Install the [IBM Cloud CLI](http://clis.ng.bluemix.net/ui/home.html)
++ Install the [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started)
 + Install the [Git CLI](https://git-scm.com/downloads)
-+ Install [Node.js](https://nodejs.org) to test locally
++ Install [Node.js](https://nodejs.org) to test your app locally
 
 
 # Steps
@@ -39,17 +39,15 @@ In the following lab, you will learn:
 
 1. Log in to [IBM CLoud Platform console](https://console.bluemix.net).
 
-1. Select the Region (e.g. United States) where you want to create your application.
+1. Select the Region (e.g. United States) where you want to create your application. If needed, create a space in that region.
 
 1. Go to the Cloud Platform **Catalog**.
 
-1. In the Compute category, select **Cloud Foundry Apps**
-
-1. Create a new app with the ***SDK for Node.js***.
+1. Look for the ***SDK for Node.js*** from the search bar and create an instance of this runtime (it is part of the Cloud Foundry App section). 
 
 1. Give your app a unique name and unique host (e.g. nodeapp-[your-initials])
 
-1. View your application.
+1. Wait for your application to start and click on "Visit App URL" to view your application.
 
 The SDK for Node.js created a simple "Hello World!" web app that will become our starting point.
 
