@@ -1,7 +1,7 @@
 
 # Introduction
 
-In this lab, you will learn how to create and deploy you first app in Node.js with the IBM Cloud platform. You will also understand how to work locally with Node.js, connect to an IBM Cloud service and push your modifications to the IBM Cloud platform. 
+You will learn how to create and deploy you first app in Node.js with the IBM Cloud platform. You will also understand how to work locally with Node.js, connect to an IBM Cloud service and push your modifications to the IBM Cloud platform. 
 
 <img src="./images/blmx+watson.png" width="40%"/>
 
@@ -10,7 +10,7 @@ In this lab, you will learn how to create and deploy you first app in Node.js wi
 
 In the following lab, you will learn:
 
-+ How to deploy a new Cloud Foundry app with the Node.js runtime
++ How to deploy a new Cloud Foundry app using the Node.js runtime
 + How to run a Node.js app locally
 + How to create and bind a new service 
 + How to use the IBM Cloud Command Line Interface
@@ -41,7 +41,7 @@ In the following lab, you will learn:
 
 1. Select the Region (e.g. United States) where you want to create your application. If needed, create a space in that region.
 
-1. Go to the Cloud Platform **Catalog**.
+1. Navigate to the Cloud Platform **Catalog**.
 
 1. Look for the ***SDK for Node.js*** from the search bar and create an instance of this runtime (it is part of the Cloud Foundry App section). 
 
@@ -91,9 +91,9 @@ The SDK for Node.js created a simple "Hello World!" web app that will become our
 
 # Step 3 - Change a file locally
 
-1. In your file directory, open **public/index.html** with a code editor such as Sublime or Notepad++
+1. In your file directory, open and edit **public/index.html** using a code editor such as Sublime or Notepad++
 
-1. Remove the text (l19-20) and add a Text Area and a Button:
+1. Remove the text (l19-20) and add a Text Area and a Button on the UI:
 
 1. Remove:
 
