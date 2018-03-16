@@ -1,8 +1,8 @@
 <img src="./images/cloud-color-logo.png" width="20%"/>
 
-Discover the IBM Cloud Platform through a set of hands-on labs.
+Getting Started with the IBM Cloud Platform !
 
-# Table of Contents
+# List of Labs
 
 + [1.1 Lab Node.js - add Watson TTS in a Node.js web app](./labs/1.1%20Lab%20Node.js%20-%20add%20Watson%20TTS%20in%20a%20Node.js%20web%20app)
 
@@ -35,4 +35,4 @@ Discover the IBM Cloud Platform through a set of hands-on labs.
 
 # Pre-Requisites
 
-If you run these labs on your own computer, you will need to install some softwares first. Here is a non-exhaustive list of [pre-reqs](./prereqs).
+Here is a non-exhaustive list of [pre-reqs](./prereqs).
