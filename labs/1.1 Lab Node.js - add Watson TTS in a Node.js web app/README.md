@@ -140,10 +140,15 @@ It has **1024MB** of disk space available.
   $ bx api <endpoint>
   ```
 
-  Select one of the Cloud Platform endpoint below based on the region where you created your app.
-  * US: https://api.ng.bluemix.net
-  * EU: https://api.eu-gb.bluemix.net
-  * AU: https://api.au-syd.bluemix.net
+  Select one of the API endpoint below to target the region in which you earlier have created your app using the IBM Cloud UI.
+  * US SOUTH: https://api.ng.bluemix.net
+  * US EAST: https://api.us-east.bluemix.net
+  * UK: https://api.eu-gb.bluemix.net
+  * GERMANY: https://api.eu-de.bluemix.net
+  * SYDNEY: https://api.au-syd.bluemix.net
+  
+
+
   
 1. Login to the IBM Cloud Platform
 
