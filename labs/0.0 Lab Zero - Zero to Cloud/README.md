@@ -2,7 +2,7 @@
 # Introduction
 
 
-<img src="./images/cloud.png" width="40%"/>
+<img src="./images/cloud.png" width="20%"/>
 
 
 # Objective
