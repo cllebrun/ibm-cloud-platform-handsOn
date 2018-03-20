@@ -35,7 +35,7 @@ In the following lab, you will learn:
 
 # Step 1 - 
 
-1. Log in to [IBM CLoud Platform console](https://console.bluemix.net).
+1. 
 
 1. 
 
