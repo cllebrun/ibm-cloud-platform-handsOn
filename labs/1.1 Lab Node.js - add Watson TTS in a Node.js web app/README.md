@@ -26,20 +26,22 @@ In the following lab, you will learn:
 
 # Steps
 
-1. [Create a new "hello world" web application](#step-1---create-a-new-web-application)
-2. [Run the app locally](#step-2---run-the-app-locally)
+1. [Create a new "hello world" web application using the web UI](#step-1---create-a-new-web-application-using-the-web-UI)
+2. [Run the node.js app locally](#step-2---run-the-node.js-app-locally)
 3. [Change a file locally](#step-3---change-a-file-locally)
-4. [Push your local change to the cloud](#step-4---push-your-local-change-to-the-cloud)
+4. [Push your local app to the cloud](#step-4---push-your-local-app-to-the-cloud)
 5. [Create and bind a Watson service](#step-5---create-and-bind-a-watson-service)
-6. [Integrate the Watson service in your app](#step-6---Integrate-the-Watson-service-in-your-app)
+6. [Use the Watson service in your app](#step-6---USe-the-Watson-service-in-your-app)
 
 
 
-# Step 1 - Create a new web application
+# Step 1 - Create a new "hello world" web application using the web UI
 
 1. Log in to [IBM CLoud Platform console](https://console.bluemix.net).
 
-1. Select the Region (e.g. United States) where you want to create your application. If needed, create a space in that region.
+1. Select the Region (e.g. United States) where you want to create your application. If needed, create an org and a space in that region.
+
+1. Note these Region, Org and Space names, as you may need it later to target your work space.
 
 1. Navigate to the Cloud Platform **Catalog**.
 
@@ -51,13 +53,15 @@ In the following lab, you will learn:
 
 The SDK for Node.js created a simple "Hello World!" web app that will become our starting point.
 
-1. Fork the source code from Git: 
+
+
+# Step 2 - Run the node.js app locally
+
+1. Fork the starter source code from Git: 
   
   ```
   $ git clone https://github.com/cllebrun/starters
   ```
-
-# Step 2 - Run the app locally
 
 1. From to the directory of the starter code
 
@@ -86,7 +90,7 @@ The SDK for Node.js created a simple "Hello World!" web app that will become our
   To view your app, open this link in your browser: http://localhost:3000
   ```
 
-1. Access the app with your web browser
+1. Access the app with your web browser to vizualise your local node.js app
 
 
 # Step 3 - Change a file locally
@@ -113,7 +117,7 @@ The SDK for Node.js created a simple "Hello World!" web app that will become our
   ```
 1. Reload the page in your web browser to confirm the change locally
 
-# Step 4 - Push your local change to the cloud
+# Step 4 - Push your local app to the cloud
 
 Cloud Foundry relies on the *manifest.yml* file to know what to do when you run the *cf push* command.
 Replace with your app name (deployed on the IBM Cloud Platform) for both "name" and "host"
@@ -140,20 +144,30 @@ It has **1024MB** of disk space available.
   $ bx api <endpoint>
   ```
 
-  Select one of the API endpoint below to target the region in which you earlier have created your app using the IBM Cloud UI.
+  Select one of the API endpoint below to target the region in which you earlier have created your app using the IBM Cloud UI (Step 1). 
   * US SOUTH: https://api.ng.bluemix.net
   * US EAST: https://api.us-east.bluemix.net
   * UK: https://api.eu-gb.bluemix.net
   * GERMANY: https://api.eu-de.bluemix.net
   * SYDNEY: https://api.au-syd.bluemix.net
+
+  Pushing an app with the same name and host, targeting the same region, org and space in which your existing hoseted app is, that will be erased and replaced.
   
+1. Connect to the IBM Cloud Platform
 
-
+  ```
+  $ bx api <endpoint>
+  ```
   
 1. Login to the IBM Cloud Platform
 
   ```
   $ bx login
+  ```
+1. Target the right org and space on the IBM Cloud Platform
+
+  ```
+  $  bx target -o [your_org_name] -s [your_space_name]
   ```
 
 1. Push the app to the IBM Cloud Platform
@@ -185,27 +199,30 @@ In a previous step we set up a Git repository and a build pipeline was automatic
 
 To give more value to your app, you are now going to add a Text To Speech service
 
-1. Back to the IBM Cloud Platform console, go to your application **Connections**.
+1. the Watson TTS service could have been provionned by running the command line, give it a name like "nodeapp-tts":
 
-1. Click **Connect New** to add a service to your application
+```
+  $ bx cf create-service text_to_speech lite [your_service_name]
 
-1. Search for **Text To Speech** in the catalog
+```
 
-1. Give the service a name such as **nodeapp-tts**
+1. Bind the Watson service to your app:
 
-1. Click **Create**. the IBM Cloud Platform will provision a TTS service and connect it to your application.
+```
+  $ bx cf bind-service [your_app_name] [your_service_name]
 
-1. Select **Restage** when prompted to do so.
+```
+1. Restage your app:
+
+```
+  $ bx cf restage [your_app_name]
+
+```
 
   Your application will restart and the service connection information will be made available to your application.
-  
-  Note: the Watson TTS service could have been provionned by running the command line
-  ```
-  $ cf create-service text_to_speech standard nodeapp-tts
-  ```
 
 
-# Step 6 - Integrate the Watson service in your app
+# Step 6 - Use the Watson service in your app
 
 When your application runs in Cloud Foundry, all service information bound to the application are available in the **VCAP_SERVICES** variable.
 
@@ -216,22 +233,43 @@ When your application runs in Cloud Foundry, all service information bound to th
     - [your-service name]
   ```
 
-1. Install the node watson module:
+1. Install the cfenv and watson node modules:
 
   ```
   npm install watson-developer-cloud --save
+
+  ```
+  ```
+  npm install cfenv --save
+
   ```
 
 1. In your local directory, open the app.js server side js file and add: 
 
   ```
   var  watson = require('watson-developer-cloud');
-  // (If you nedd to do local development, replace username and password)
-  var textToSpeech = watson.text_to_speech({
-    version: 'v1',
-    username: '<username>',
-    password: '<password>'
-  });
+  var cfenv = require('cfenv');
+  
+  var tts_service_vcap = appEnv.services["text_to_speech"];
+
+  if (tts_service_vcap){
+    var tts_credentials = tts_service_vcap[0].credentials;
+    var textToSpeech = watson.text_to_speech({
+      version: 'v1',
+      username: tts_credentials.username,
+      password: tts_credentials.password
+    });
+
+  }
+  else{ 
+    // (If you nedd to do local development, replace username and password)
+    var textToSpeech = watson.text_to_speech({
+      version: 'v1',
+      username: '<username>', // provide username from service credentials
+      password: '<password>' // provide password from service credentials
+    });
+  }
+
   // Handle text to speech request from client
   app.get('/api/synthesize', function(req, res, next) {
     var transcript = textToSpeech.synthesize(req.query);
@@ -247,7 +285,19 @@ When your application runs in Cloud Foundry, all service information bound to th
   });
   ```
 
-1. Replace <username> and <password> by your credentials, you can find it on the IBM Cloud Platform uder **Connections** -> Click on "View Credentials" under the text to speech service
+1. Replace <username> and <password> by your credentials, you can run the CF command:
+  ```
+  bx cf env <your_app_name>
+
+  ```
+and you'll find username and password under: 
+
+"VCAP_SERVICES": {
+  "text_to_speech": [
+   {
+    "credentials": { ...
+
+Note that you also have the possibility to find the credentials using the IBM Cloud UI, under your application Runtime menu -> Environment variables.
 
 1. In your app directory, locally, create a .js file in your public folder, name it "index.js"
 
@@ -289,7 +339,7 @@ When your application runs in Cloud Foundry, all service information bound to th
   The console output will look like:
   
   ```
-  > NodejsStarterApp@0.0.1 start /Users/john/dev/nodeapp-[your-initials]
+  > NodejsStarterApp@0.0.1 start /Users/john/dev/[your_app_name]
   > node app.js
   
   server starting on http://localhost:[port-number]
@@ -297,10 +347,10 @@ When your application runs in Cloud Foundry, all service information bound to th
 
 1. Access the app with your web browser (turn on the volume and click on the speak button)
 
-1. If it is working well you can now push it to the IBM Cloud Platform !
+1. If it is working well you can now push it to the IBM Cloud Platform ! (you can remove hardcoded username and password)
 
 # Resources
 
 For additional resources pay close attention to the following:
 
-- [Watson Text To Speech Documentation](https://www.ibm.com/watson/developercloud/text-to-speech.html)
+- [Watson Text To Speech Documentation](https://www.ibm.com/watson/developercloud/text-to-speech.html) and https://console.bluemix.net/docs/services/text-to-speech/getting-started.html#gettingStarted
