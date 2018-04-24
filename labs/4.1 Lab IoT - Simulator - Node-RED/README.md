@@ -2,20 +2,20 @@
 
 # Introduction
 
-This tutorial demonstrates how to connect a simulated device to the Watson IoT platform, vizualise its live data, store its data into a database and leverage [Node-RED](http://www.nodered.org) tool for wiring together hardware devices, APIs and online services.
+This tutorial demonstrates how to connect a simulated device to the Watson IoT platform, visualize its live data, store its data into a database and leverage [Node-RED](http://www.nodered.org) tool for wiring together hardware devices, APIs and online services.
 
 
 
 # Objectives
 * You will simulate a temperature sensor.
-* You will collect sensor data from a Watson IOT service.
+* You will collect sensor data from a Watson IoT service.
 * You will discover how to leverage Node-RED to connect IoT.
 * You will store the collected data into a NoSQL database.
 * You will use Watson to translate messages.
 
 
 # Pre-Requisites
-* A [IBM Cloud Platform](http://www.bluemix.net) account
+* A [IBM Cloud Platform](http://console.bluemix.net/){:target="_blank"} account
 
 
 # Start the simulated device
@@ -23,7 +23,7 @@ This tutorial demonstrates how to connect a simulated device to the Watson IoT p
 We will use a simulator of a temperature sensor. This sensor also simulates Humidity and Object Temperature.<br />
 This way, we don't require an actual hardware device to test our application.
 
-1. In a new browser window or on a smartphone, browse to [IOT Sensor](http://quickstart.internetofthings.ibmcloud.com/iotsensor).
+1. In a new browser window or on a smartphone, browse to [IoT Sensor](http://quickstart.internetofthings.ibmcloud.com/iotsensor).
 <br />Alternatively, enter this short URL: http://ibm.biz/iotsensor
 
     ![Sensor simulator](./images/smarphone-iotsensor.png)

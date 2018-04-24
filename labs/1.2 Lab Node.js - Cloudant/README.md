@@ -77,25 +77,32 @@ The manifest.yml includes basic information about your app, such as the name, ho
 
 You can use the the IBM Cloud Platform CLI to deploy apps.
 
-Choose your API endpoint
-   ```
+
+1. Chose the *API-endpoint* in the command with an API endpoint from the following list.
+
+  * US SOUTH: https://api.ng.bluemix.net
+  * US EAST: https://api.us-east.bluemix.net
+  * UK: https://api.eu-gb.bluemix.net
+  * GERMANY: https://api.eu-de.bluemix.net
+  * SYDNEY: https://api.au-syd.bluemix.net
+   
+  ```
    bx api <API-endpoint>
-   ```
-
-Replace the *API-endpoint* in the command with an API endpoint from the following list.
-  ```
-  https://api.ng.bluemix.net # US South
-  https://api.eu-gb.bluemix.net # United Kingdom
-  https://api.au-syd.bluemix.net # Sydney
   ```
 
-Login to your Bluemix account
+1. Login to your Bluemix account
 
   ```
   bx login
   ```
+1. Target the right org and space on the IBM Cloud Platform
 
-From within the *nodejs-helloworld* directory push your app to Bluemix
+  ```
+  $  bx target -o [your_org_name] -s [your_space_name]
+  ```
+
+
+1. From within the *nodejs-helloworld* directory push your app to Bluemix
   ```
   bx app push
   ```
@@ -103,7 +110,7 @@ From within the *nodejs-helloworld* directory push your app to Bluemix
 This can take a minute. If there is an error in the deployment process you can use the command `bx cf logs <Your-App-Name> --recent` to troubleshoot.
 
 
-View your app at the URL listed in the output of the push command, for example, *myUrl.mybluemix.net*.  You can issue the
+1. View your app at the URL listed in the output of the push command, for example, *myUrl.mybluemix.net*.  You can issue the
 ```
 bx apps
 ```
@@ -113,9 +120,50 @@ command to view your apps status and see the URL.
 # Step 5 - Add a database
 
 Next, we'll add a NoSQL database to this application and set up the application so that it can run locally and on the IBM Cloud Platform.
+You can do it using the IBM Cloud UI or the CLI:
 
-1. Log in to the IBM Cloud Platform in your Browser. Select your application and click on `Connect new` under `Connections`.
-2. Select `Cloudant NoSQL DB` and Create the service.
+1. Using the CLI:
+
+1. the Watson TTS service could have been provionned by running the command line, give it a name like "cloudantNoSQLDB-node":
+
+```
+  $ bx cf create-service cloudantNoSQLDB lite [your_service_name]
+
+```
+
+1. Bind the Watson service to your app:
+
+```
+  $ bx cf bind-service [your_app_name] [your_service_name]
+
+```
+1. Restage your app:
+
+```
+  $ bx cf restage [your_app_name]
+
+```
+
+1. Get your VCAP_SERVICES:
+
+  Your application will restart and the service connection information will be made available to your application.
+
+  ```
+  bx cf env <your_app_name>
+
+  ```
+and you'll find the credentials under: 
+
+"VCAP_SERVICES": {
+  "cloudantNoSQLDB": [
+   {
+    "credentials": { ...
+
+
+1: Using the UI:
+
+1. Log in to the IBM Cloud Platform in your Browser. From the Catalog section, create the `Cloudant NoSQL DB` int the same region/org/space than you already have your app.
+2. From your app overview, click 'Create Connection' under the 'Connections' section, chose the Cloudant instance you've just created.
 3. Select `Restage` when prompted. Bluemix will restart your application and provide the database credentials to your application using the `VCAP_SERVICES` environment variable. This environment variable is only available to the application when it is running on the IBM Cloud Platform.
 
 # Step 6 - Use the database
