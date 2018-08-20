@@ -7,30 +7,27 @@
 
 # Objective
 
-In the following lab, you will learn:
+This lab is an introduction to IBM Cloud and its posibilities. No need any developer skills to complete the lab. You just need an IBM Cloud account in order to create your web application.
 
-+ 
-+ 
-+ 
-+ 
++ Discover the different languages available
++ Discover the IBM Cloud services Catalog
++ Use one of the starter kits available to create your first application with IBM Cloud
++ Test your live application !
+
 
 
 # Pre-Requisites
 
 + Get an [IBM Cloud Platform account](https://console.bluemix.net/registration/), or use an existing account.
-+ Install the [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started)
-+ Install the [Git CLI](https://git-scm.com/downloads)
-+ Install [Node.js](https://nodejs.org) to test your app locally
+
 
 
 # Steps
 
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
+1. Runtimes overview
+2. Catalog overview
+3. Create your first application using a starter kit
+
 
 
 # Step 1 - 
